@@ -7,7 +7,8 @@ enzoFR60.CVoiture.JobYes = true -- Pas Touchée ! true = Le metier marche, false
 enzoFR60.CVoiture.SelectedLanguage = "en" -- en = english , fr = french
 
 enzoFR60.CVoiture.Metier = { -- true = accés a l'addon, false = N'a pas accés a l'addon
-	["Restorateur De Vehicules"] = true,
+	["Restaurateur De Vehicules"] = true,
+	["Vehicle Restorer"] = true,
 	-- ['Citoyen'] = true, -- Exemple
 }
 
