@@ -1,4 +1,4 @@
-﻿AddCSLuaFile("cl_init.lua");
+AddCSLuaFile("cl_init.lua");
 AddCSLuaFile("shared.lua");
 include("shared.lua");
 function ENT:Initialize()
@@ -7,13 +7,9 @@ function ENT:Initialize()
 	self:SetMoveType(MOVETYPE_VPHYSICS)
 	self:SetSolid(SOLID_VPHYSICS)
 	local phys = self:GetPhysicsObject()
+	if not IsValid(phys) then return end
 	phys:Wake()
 	self:GetPhysicsObject():SetMass(105);
 	
 	self:SetNWInt("cvoiture_plaquei", 1)
-end;
-
-function ENT:OnTakeDamage(dmginfo)
-	self:EmitSound("physics/body/body_medium_break"..math.random(2, 4)..".wav");
-	self:Remove()
 end;
