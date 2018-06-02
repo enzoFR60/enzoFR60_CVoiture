@@ -1,4 +1,5 @@
-﻿enzoFR60.CVoiture = enzoFR60.CVoiture or {}
+enzoFR60 = enzoFR60 or {}
+enzoFR60.CVoiture = enzoFR60.CVoiture or {}
 
 enzoFR60.CVoiture.CheckVersionAddon = true -- true = La verification marche, false = elle marche pas ;)
 
