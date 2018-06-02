@@ -32,21 +32,21 @@ function ENT:Initialize()
 	self.CanUse = true
 	self.jailWall = true
 	
-	local price = math.random(enzoFR60.CVoiture.PrixMin, enzoFR60.CVoiture.PrixMax);
+	local price = math.random(enzoFR60.CVoiture.PrixMin, enzoFR60.CVoiture.PrixMax)
 
-	self:SetNWInt("price", price);
+	self:SetNWInt("price", price)
 end
 
-function ENT:SpawnFunction(ply, trace)
-	local ent = ents.Create("enzofr60_cvoiture_voiturev");
-	ent:SetPos(trace.HitPos + trace.HitNormal * 22);
-	ent:Spawn();
-	ent:Activate();    
-	return ent;
+function ENT:SpawnFunction(ply, trace, class)
+	local ent = ents.Create(class)
+	ent:SetPos(trace.HitPos + trace.HitNormal * 22)
+	ent:Spawn()
+	ent:Activate()
+	return ent
 end;
 
 function ENT:Use(activator, caller)
-		local curTime = CurTime();
+		local curTime = CurTime()
 	if (!self.nextUse or curTime >= self.nextUse) then
 		if self.CanUse then
 		if enzoFR60.CVoiture.Metier[ team.GetName( caller:Team() ) ] then
@@ -58,21 +58,21 @@ function ENT:Use(activator, caller)
 			DarkRP.notify( caller, 0, 4, enzoFR60.CVoiture.LanguageCVente )
 			timer.Simple(enzoFR60.CVoiture.TempsChangement, function() 
 				self.CanUse = true 
-				DarkRP.notify( caller, 0, 4, enzoFR60.CVoiture.LanguageFVente..", "..self:GetNWInt('price').."€" )
+        enzoFR60_CVoiture_Notify(caller, 1, 4, tostring(enzoFR60.CVoiture.LanguageFVente..", "..self:GetNWInt('price').."€"))
 				caller:addMoney(self:GetNWInt("price"))
 				self:Remove()
 			end)
 			else
-				DarkRP.notify( caller, 0, 4, enzoFR60.CVoiture.LanguageErrorPhoneVente )
+        enzoFR60_CVoiture_Notify(caller, 1, 4, tostring(enzoFR60.CVoiture.LanguageErrorPhoneVente))
 			end
 			else
-				DarkRP.notify( caller, 0, 4, enzoFR60.CVoiture.LanguageNFVente )
+          enzoFR60_CVoiture_Notify(caller, 1, 4, tostring(enzoFR60.CVoiture.LanguageNFVente))
 			end
 			else
-			DarkRP.notify( caller, 0, 4, enzoFR60.CVoiture.LanguageErrorJobVente )
+        enzoFR60_CVoiture_Notify(caller, 1, 4, tostring(enzoFR60.CVoiture.LanguageErrorJobVente))
 			end
 			else
-			DarkRP.notify( caller, 0, 4, enzoFR60.CVoiture.LanguageNopVente )
+      enzoFR60_CVoiture_Notify(caller, 1, 4, tostring(enzoFR60.CVoiture.LanguageNopVente))
 		end
 	end
 end
@@ -214,15 +214,4 @@ function ENT:StartTouch(hitEnt)
 			end;
 		end
 	end
-end
-
-function ENT:OnTakeDamage(dmg)
-	self.damage = self.damage - dmg:GetDamage()
-	if (self.damage <= 10) then
-		self:Remove()
-	end
-end
-
-function ENT:OnRemove()
-	if not IsValid(self) then return end
 end
