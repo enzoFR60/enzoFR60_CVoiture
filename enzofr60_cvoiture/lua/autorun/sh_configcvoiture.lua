@@ -74,8 +74,6 @@ if (enzoFR60.CVoiture.SelectedLanguage == "en") then
  
  -- Notif Check Version
  
- enzoFR60.CVoiture.LanguageCheckVersionValide = "You have the right version of the addon enzoFR60_cvoiture."
- 
  enzoFR60.CVoiture.LanguageCheckVersionNonValide = "The version of the addon enzoFR60_cvoiture is not up to date."
  
  enzoFR60.CVoiture.LanguageCheckVersionError = "There was an error at the time of the audit"
@@ -129,8 +127,6 @@ elseif (enzoFR60.CVoiture.SelectedLanguage == "fr") then
  enzoFR60.CVoiture.LanguageArmePhone = "Telephone Du Restaurateur"
  
  -- Notif Check Version
- 
- enzoFR60.CVoiture.LanguageCheckVersionValide = "Vous avez la bonne version de l'addon enzoFR60_cvoiture."
  
  enzoFR60.CVoiture.LanguageCheckVersionNonValide = "La version de l'addon enzoFR60_cvoiture est pas a jour."
  
