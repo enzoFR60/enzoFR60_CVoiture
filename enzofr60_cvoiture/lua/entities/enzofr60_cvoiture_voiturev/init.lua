@@ -85,7 +85,7 @@ function ENT:OnTakeDamage(dmg)
 	end
 end
 
-function ENT:Touch(hitEnt)
+function ENT:StartTouch(hitEnt)
 	if not IsValid(hitEnt) then return end
 	
 	if self.CanUse then
