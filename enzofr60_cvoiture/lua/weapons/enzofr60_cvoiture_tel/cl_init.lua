@@ -1,13 +1,6 @@
 include('shared.lua')
 
 include("autorun/sh_configcvoiture.lua")
- 
-SWEP.PrintName        = enzoFR60.CVoiture.LanguageArmePhone	
-SWEP.Slot				= 4
-SWEP.SlotPos			= 2
-SWEP.DrawAmmo			= false
-SWEP.DrawCrosshair		= false
-SWEP.HoldType = "pistol"
 
 SWEP.VElements = {
 	["PROP"] = { type = "Model", model = "models/props/cs_office/phone_p2.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(4, 3.5, -1), angle = Angle(100, 20, 180), size = Vector(0.65,0.65,0.65), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
