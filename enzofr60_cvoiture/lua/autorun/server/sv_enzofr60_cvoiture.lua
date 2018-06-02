@@ -22,10 +22,10 @@ local function checkVersion(ply)
           return
         end
         
-				if parsingVersion(string.Trim(body)) > parsingVersion(version) then
+	if parsingVersion(string.Trim(body)) > parsingVersion(version) then
         	enzoFR60_CVoiture_Notify(ply, 1, 20, "[CVoiture] " .. tostring(enzoFR60.CVoiture.LanguageCheckVersionNonValide))
-				end
-			end,
+	end
+       end,
       function(err)
     	end)
   end
