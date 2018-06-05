@@ -1,3 +1,4 @@
+timer.Simple( 10, function() 
 TEAM_ENZOFR60_CVOITURE = DarkRP.createJob(enzoFR60.CVoiture.LanguageNameJob, {
             color = Color(0, 0, 0, 255),
             model = "models/player/eli.mdl",
@@ -74,3 +75,4 @@ TEAM_ENZOFR60_CVOITURE = DarkRP.createJob(enzoFR60.CVoiture.LanguageNameJob, {
             cmd = 'buycvoituresiege',
             allowed = {TEAM_ENZOFR60_CVOITURE}
   })
+end )
